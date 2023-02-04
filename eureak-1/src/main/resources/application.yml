@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: eureka-cluster
+server:
+  port: 1001
+eureka:
+  instance:
+    hostname: eureka-1 # 注册实例名称
+    prefer-ip-address: true # 是否将自己的ip注册到eureka中
+  client:
+    service-url:
+      defaultZone: http://eureka-1:1001/eureka/,http://eureka-2:1002/eureka/,http://eureka-3:1003/eureka/
+logging:
+  config: classpath:logback.xml
